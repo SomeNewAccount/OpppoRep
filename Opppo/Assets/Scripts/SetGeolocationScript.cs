@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MapScript : MonoBehaviour
+public class SetGeolocationScript : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
