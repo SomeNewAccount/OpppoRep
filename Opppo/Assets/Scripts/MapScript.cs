@@ -152,14 +152,13 @@ public class MapScript : MonoBehaviour
 
 
 
-
     private void LoadMap(Vector2 playerPosition)
     {
         _mapLoaded = false;
         Url = "http://open.mapquestapi.com/staticmap/v4/getmap?key=" +
             Key + "&size=1280,1280&zoom=" +
-            _zoom + "&type=" + _maptype +
-            "&center=" + PlayerPosition.x + "," + PlayerPosition.y;
+            _zoom + "&type=" + _maptype 
+            + "&center=" + PlayerPosition.x.ToString().Replace(",",".") + "," + PlayerPosition.y.ToString().Replace(",", ".");
 
         StartCoroutine(LoadMap());
     }
