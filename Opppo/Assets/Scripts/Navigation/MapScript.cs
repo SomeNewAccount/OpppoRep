@@ -10,10 +10,9 @@ public class MapScript : MonoBehaviour
 
     public bool gpsFix { get; set; }
 
-    /// <summary>
-    /// Url propertyes
-    /// </summary>
     string Url = "";
+    public GetPoints pointsScript;
+
     public Transform myMap;
     int _multiplier = 2; //1 для size=640x640 tile, 2 для size=1280*1280
 
@@ -21,7 +20,8 @@ public class MapScript : MonoBehaviour
     public Text StatusText;
 
     public Vector2 PlayerPosition =
-        new Vector2(42.3627f, -71.05686f);  //Latitude, Longitude
+        new Vector2(55.994345f, 92.797438f);  //Latitude, Longitude
+    
 
     private double tempLat;
     private double tempLon;
@@ -41,6 +41,10 @@ public class MapScript : MonoBehaviour
     public string Status { set { StatusText.text = value; } }
 
     int _counter;
+    private void Awake()
+    {
+        pointsScript = gameObject.GetComponent<GetPoints>();
+    }
     IEnumerator Start()
     {
 
@@ -94,6 +98,7 @@ public class MapScript : MonoBehaviour
             ///Все гуд
             LoadMap(PlayerPosition);
         }
+        pointsScript.GetPointsFunc();
 
         InvokeRepeating("UpdateMyPosition", 1, 0.5f);
         InvokeRepeating("UpdateMap", 1, 3f);

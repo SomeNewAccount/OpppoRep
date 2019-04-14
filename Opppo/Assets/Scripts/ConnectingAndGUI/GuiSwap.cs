@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class GuiSwap : MonoBehaviour
 {
-    public GameObject MainCanvas;
     public GameObject RegCanvas;
     public GameObject LogCanvas;
 
@@ -19,4 +18,5 @@ public class GuiSwap : MonoBehaviour
         RegCanvas.SetActive(true);
         LogCanvas.SetActive(false);
     }
+    
 }
